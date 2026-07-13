@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: order-service-config
+data:
+  ORDER_MYSQL_HOST: "host.docker.internal"
+  ORDER_MYSQL_PORT: "3306"
+  ORDER_MYSQL_USER: "root"
+  ORDER_MYSQL_DB: "order_db"
+  ORDER_INVENTORY_SERVICE_URL: "http://inventory-service:5002"
+  ORDER_SERVICE_PORT: "5001"

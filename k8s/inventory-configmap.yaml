@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inventory-service-config
+data:
+  INVENTORY_MYSQL_HOST: "host.docker.internal"
+  INVENTORY_MYSQL_PORT: "3306"
+  INVENTORY_MYSQL_USER: "root"
+  INVENTORY_MYSQL_DB: "inventory_db"
+  INVENTORY_REDIS_HOST: "host.docker.internal"
+  INVENTORY_REDIS_PORT: "6379"
+  INVENTORY_REDIS_DB: "0"
+  INVENTORY_SERVICE_PORT: "5002"
