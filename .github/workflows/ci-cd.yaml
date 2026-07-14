@@ -15,8 +15,8 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  ORDER_IMAGE_NAME: ${{ github.repository }}/order-service
-  INVENTORY_IMAGE_NAME: ${{ github.repository }}/inventory-service
+  ORDER_IMAGE_NAME: ${{ github.repository_owner }}/order-service
+  INVENTORY_IMAGE_NAME: ${{ github.repository_owner }}/inventory-service
 
 jobs:
   code-check:
@@ -58,7 +58,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-          password: ${{ secrets.CR_PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - uses: docker/build-push-action@v5
         with:
           context: ./order-service
